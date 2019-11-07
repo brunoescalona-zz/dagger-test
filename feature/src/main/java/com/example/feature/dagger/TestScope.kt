@@ -1,4 +1,4 @@
-package com.example.daggertest.dagger
+package com.example.feature.dagger
 
 import javax.inject.Scope
 

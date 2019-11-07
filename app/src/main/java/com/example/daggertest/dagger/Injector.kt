@@ -5,8 +5,8 @@ object Injector {
         .builder()
         .build()
 
-    val testDependencyComponent = DaggerTestDependencyComponent
+    /*val testDependencyComponent = DaggerTestDependencyComponent
         .builder()
         .testComponent(testComponent)
-        .build()
+        .build()*/
 }

@@ -1,0 +1,35 @@
+apply plugin: 'com.android.dynamic-feature'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+    
+
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+
+    }
+
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':app')
+
+    implementation "com.google.dagger:dagger:2.19"
+    implementation "com.google.dagger:dagger-android:2.19"
+
+    kapt 'com.google.dagger:dagger-android-processor:2.19'
+    kapt 'com.google.dagger:dagger-compiler:2.19'
+}

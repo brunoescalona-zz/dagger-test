@@ -1,11 +1,9 @@
-package com.example.daggertest.services
+package com.example.feature.services
 
 import android.util.Log
-import com.example.daggertest.dagger.DaggerTestComponent
-import com.example.daggertest.dagger.DaggerTestDependencyComponent
 import com.example.daggertest.dagger.TestComponent
-import com.example.daggertest.services.TestB
 import com.example.daggertest.services.TestC
+import com.example.feature.dagger.DaggerTestDependencyComponent
 import javax.inject.Inject
 
 class TestCImplementation @Inject constructor(

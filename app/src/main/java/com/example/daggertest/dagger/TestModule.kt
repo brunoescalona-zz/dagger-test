@@ -21,7 +21,7 @@ class TestModule {
     fun provideTestC(testComponent: TestComponent) : TestC {
         if(testCProvider != null) return testCProvider as TestC
 
-        val provider = Class.forName("com.example.daggertest.services.TestCImplementation\$Provider").kotlin.objectInstance as TestC.Provider
+        val provider = Class.forName("com.example.feature.services.TestCImplementation\$Provider").kotlin.objectInstance as TestC.Provider
         return provider
             .get(testComponent)
             .also { testCProvider = it }
