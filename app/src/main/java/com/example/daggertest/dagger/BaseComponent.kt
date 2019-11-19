@@ -1,14 +1,14 @@
 package com.example.daggertest.dagger
 
-import com.example.daggertest.services.TestA
+import com.example.daggertest.services.BaseService
 import com.example.daggertest.ui.MainActivity
 import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [TestModule::class])
-interface TestComponent {
+@Component(modules = [BaseModule::class])
+interface BaseComponent {
     fun inject(activity: MainActivity)
 
-    fun provideTestA() : TestA
+    fun provideBaseService() : BaseService
 }

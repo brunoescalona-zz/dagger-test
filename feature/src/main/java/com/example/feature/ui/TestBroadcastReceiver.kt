@@ -3,23 +3,26 @@ package com.example.feature.ui
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import com.example.daggertest.services.TestA
-import com.example.feature.dagger.Injector
-import com.example.feature.services.TestB
+import android.util.Log
+import com.example.daggertest.dagger.BaseInjector
+import com.example.daggertest.services.BaseService
+import com.example.feature.dagger.DynamicFeatureInjector
+import com.example.feature.services.DynamicFeatureService
 import javax.inject.Inject
 
-class TestBroadcastReceiver: BroadcastReceiver() {
+class TestBroadcastReceiver : BroadcastReceiver() {
 
     @Inject
-    lateinit var testB: TestB
+    lateinit var dynamicFeatureService: DynamicFeatureService
     @Inject
-    lateinit var testA: TestA
+    lateinit var baseService: BaseService
 
     override fun onReceive(p0: Context?, p1: Intent?) {
 
-        Injector.getTestDependencyComponent(com.example.daggertest.dagger.Injector.testComponent).inject(this)
+        DynamicFeatureInjector.dynamicFeatureComponent.inject(this)
 
-        testB.testBFun()
-        testA.testAFun()
+        Log.d("TestBroadcastReceiver", "onReceive")
+        dynamicFeatureService.callDynamicFeatureService()
+        baseService.callBaseService()
     }
 }

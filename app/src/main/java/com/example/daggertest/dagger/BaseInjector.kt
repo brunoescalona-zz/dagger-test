@@ -1,12 +1,12 @@
 package com.example.daggertest.dagger
 
-object Injector {
-    val testComponent = DaggerTestComponent
+object BaseInjector {
+    val baseComponent: BaseComponent = DaggerBaseComponent
         .builder()
         .build()
 
     /*val testDependencyComponent = DaggerTestDependencyComponent
         .builder()
-        .testComponent(testComponent)
+        .baseComponent(baseComponent)
         .build()*/
 }
